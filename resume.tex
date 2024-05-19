@@ -10,14 +10,12 @@
 % moderncv themes
 \moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{burgundy}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+%\renewcommand{\familydefault}{\sfdefault}
+%\nopagenumbers{}
 
 % adjust the page margins
-\usepackage[scale=0.92]{geometry}                  % change margins
-\setlength{\footskip}{149.60005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+\usepackage[scale=0.92]{geometry}
+\setlength{\footskip}{149.60005pt}
 
 % \renewcommand{\familydefault}{\rmdefault}
 % \renewcommand{\listitemsymbol}{$\diamond$ }
@@ -28,6 +26,7 @@
 \ifxetexorluatex
   \usepackage{fontspec}
   \usepackage{unicode-math}
+  \usepackage[utf8]{inputenc}
   \defaultfontfeatures{Ligatures=TeX}
   \setmainfont{Latin Modern Roman}
   \setsansfont{Latin Modern Sans}
@@ -39,187 +38,200 @@
   \usepackage{lmodern}
 \fi
 
+\newif\ifen
+\newif\ifpt
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\pt}[1]{\ifpt#1\fi}
+
+\pttrue % Uncomment for portuguese document
+% \entrue % Uncomment for english document
+
 % document language
-\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
+% \usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
 
 % personal data
 \name{Tamiris}{Martins}
-% \title{Résumé title}                               % optional, remove / comment the line if not wanted
-% \born{4 July 1776}                                 % optional, remove / comment the line if not wanted
-\address{Edgard Nogueira, 469, São Luiz}{27286-330 Volta Redonda - RJ}{Brazil}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
-\phone[mobile]{+55~(21)~99632~9170}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
-% \phone[fixed]{+2~(345)~678~901}
-% \phone[fax]{+3~(456)~789~012}
-\email{tamiriscrepaldemartins@gmail.com}                               % optional, remove / comment the line if not wanted
-% \homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+\address{Edgard Nogueira, 469, São Luiz}{27286-330 Volta Redonda - RJ}{Brazil}
+\phone[mobile]{+55~(21)~99632~9170}
+\email{tamiriscrepaldemartins@gmail.com}
 
 % Social icons
-\social[linkedin]{tamiriscrepalde}                        % optional, remove / comment the line if not wanted
-% \social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
+\social[linkedin]{tamiriscrepalde}
+\social[github]{tamiriscrepalde}
+\social[stackoverflow]{11779941/tcrepalde}
 
-\social[github]{tamiriscrepalde}                              % optional, remove / comment the line if not wanted
-% \social[gitlab]{jdoe}                              % optional, remove / comment the line if not wanted
-% \social[codeberg]{jdoe}                            % optional, remove / comment the line if not wanted
-% \social[bitbucket]{jdoe}                           % optional, remove / comment the line if not wanted
-\social[stackoverflow]{11779941/tcrepalde}            % optional, remove / comment the line if not wanted
-
-% \social[skype]{jdoe}                               % optional, remove / comment the line if not wanted
-% \social[orcid]{0000-0000-000-000}                  % optional, remove / comment the line if not wanted
-% \social[researchgate]{jdoe}                        % optional, remove / comment the line if not wanted
-% \social[researcherid]{jdoe}                        % optional, remove / comment the line if not wanted
-% \social[googlescholar]{googlescholarid}            % optional, remove / comment the line if not wanted
-
-% \social[twitter]{ji\_doe}                          % optional, remove / comment the line if not wanted
-% \social[mastodon]{mastodon.social/web/@user}       % optional, remove / comment the line if not wanted
-% \social[telegram]{jdoe}                            % optional, remove / comment the line if not wanted
-% \social[whatsapp]{+55~(21)~99632~9170}                     % optional, remove / comment the line if not wanted
-% \social[signal]{12345678901}                       % optional, remove / comment the line if not wanted
-% \social[matrix]{@johndoe:matrix.org}               % optional, remove / comment the line if not wanted
-% \social[discord]{jdoe\#0000}                       % optional, remove / comment the line if not wanted
-
-% YouTube links can take several forms, depending on how your account and channel are set up.
-% See https://support.google.com/youtube/answer/6180214 for more information.
-% \social[youtube]{c/jdoeschannel}                   % optional, remove / comment the line if not wanted; Custom URL             - can be shorted by removing 'c/'
-% \social[youtube]{channel/XXXXXX}                   % optional, remove / comment the line if not wanted; Channel URL (ID-based) - can not be shortened
-% \social[youtube]{user/jdoe}                        % optional, remove / comment the line if not wanted; Legacy username URL    - if jdoe is not already claimed by a Custom URL, can be shortened by removing 'user/'
-
-% \social[twitch]{jdoe}                              % optional, remove / comment the line if not wanted
-% \social[tiktok]{jdoe}                              % optional, remove / comment the line if not wanted
-% \social[instagram]{jdoe}                           % optional, remove / comment the line if not wanted
-
-% \social[soundcloud]{jdoe}                          % optional, remove / comment the line if not wanted
-
-% \social[steam]{jdoe}                               % optional, remove / comment the line if not wanted
-% \social[xbox]{jdoe}                                % optional, remove / comment the line if not wanted
-% \social[playstation]{jdoe}                         % optional, remove / comment the line if not wanted
-% \social[battlenet]{jdoe\#0000}                     % optional, remove / comment the line if not wanted
-
-
-% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-% \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
-
-% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
-%   to show numerical labels in the bibliography (default is to show no labels)
-%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
 \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
-%   to redefine the bibliography heading string ("Publications")
-%\renewcommand{\refname}{Articles}
 
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
-\section{Skills}
-\cvlanguage{Programming languages}{ Python, scikit-learn, SQL, Git, TortoiseSVN, Fortran, Matlab, \LaTeX }{}
-\cvlanguage{Softwares and tools}{ GCP, BigQuery, VertexAI, Airflow, Flyte, Metabase, MLFlow, Machine Learning }{}
-\cvlanguage{}{Supervised learning, Unsupervised learning }{}
-\cvlanguage{Interpersonal}{ Critical thinking, Problem solving, Analytical skills, Leadership,  }{}
-\cvlanguage{Languages}{ Portuguese (Native); English (Professional proficiency CECRL C1)}{}
+\en{
 
-\section{Experience}
-% \subsection{Vocational}
-\cventry{Aug 21 - Current}{Data Scientist}{Hurb}{Rio de Janeiro}{}{
-% Detailed achievements:
-\begin{itemize}
-  \item Developed a heuristic to predict hotel room prices by applying Kernel Density Estimation, which became the main resource to precify travel packages' hotel room nights.
-  \item Improved a Hotel Rooms Deduplication algorithm focusing on creating label functions based on business rules.
-  \item Developed a Demand Estimator using Google Vertex AI, Flyte as orchestrator, and MLFlow for monitoring. The project helped commercial executives to evaluate future demand and price to improve negotiations. It was an extensive data modeling challenge with plenty of business rules and constraints transformed into features.
-  \item Built a K-Means clusterization model to cluster hotel based on marketing performance metrics, helping Performance Marketing Team to improve bidding strategies.
-\end{itemize}
-}
-% \vspace{6}
+  \section{Skills}
+  \cvlanguage{Programming languages}{ Python, scikit-learn, SQL, Git, TortoiseSVN, Fortran, Matlab, \LaTeX }{}
+  \cvlanguage{Softwares and tools}{ GCP, BigQuery, VertexAI, Airflow, Flyte, Metabase, MLFlow, Machine Learning }{}
+  \cvlanguage{}{Supervised learning, Unsupervised learning }{}
+  \cvlanguage{Interpersonal}{ Critical thinking, Problem solving, Analytical skills, Systemic View, Leadership,  }{}
+  \cvlanguage{Languages}{ Portuguese (Native); English (Professional proficiency CECRL C1)}{}
 
-\cventry{Mar 20 - Aug 21}{Hurb}{Data Analyst}{Rio de Janeiro, RJ}{}{
-\begin{itemize}
-	\item Developed a pipeline for offline transaction tracking through Google's HTTP Request Measurement Protocol, using Airflow as orchestrator, allowing the Performance Team to use accurate sales data to enhance Google Ads campaigns.
-	\item Implemented Google Analytics' Google Enhanced E-commerce using Google Tag Manager, enriching user interactions data collection and allowing the development of projects such as Image Selection and Custom Search Results based on CTR.
-	\item Worked giving support to the Commercial and Marketing Performance teams creating tables, views, and dashboards to support a wide variety of strategic decisions.
-\end{itemize}
-}
-% \vspace{6}
-
-\cventry{Aug 19 - Mar 20}{Hurb}{Data Science Trainee}{Rio de Janeiro, RJ}{}{
-\begin{itemize}
-	% \cvlistitem{Supported stakeholders from teams like Product, Commercial, and Marketing. Labored extensively with Google Analytics data through SQL and BigQuery.}
-	\item Supported business areas by using SQL to translate data into business insights through dashboardings and reports.
-	\item Developed a study case, using Google Trends data, about destinations with high demand for which we didn't use to sell travel packages; we could identify destinations that turned into top sellers in the following years.
-\end{itemize}
-}
-
-\cventry{Sep 16 - Aug 18}{CEPEL}{Power Engineering Intern at ANAREDE}{Rio de Janeiro, RJ}{}{
-\begin{itemize}
-	% \cvlistitem{Supported stakeholders from teams like Product, Commercial, and Marketing. Labored extensively with Google Analytics data through SQL and BigQuery.}
-	\item Supported the team in developing the power system software ANAREDE, which reunites tools for steady-state power systems analysis.
-	\item Worked on programming in Fortran and code versioning with TortoiseSVN in modules related to power flow, always focusing on clean code.
-	\item Developed an ANAREDE module used to produce reports related to contingency studies for the National System Operator (ONS).
-\end{itemize}
-}
-
-% \section{Courses \& Certificates}
-% \cvitem{Data Scientist Nanodegree}{Udacity}{}{}{}{}
-% % \cventry{Mar 23}{International English Language Testing System}{British Council}{}{Band Score 7}{ }
-% \cvitem{Machine Learning Advanced Solutions Lab}{Google}{}{}{}{}
-% \cvitem{From Data to Insights with Google Cloud Specialization}{Coursera}{}{}{}{}
-
-\section{Education}
-\cventry{Mar 13 - Dec 18}{Electrical Engineering}{Federal University of Rio de Janeiro}{Rio de Janeiro - RJ}{
-  % \textit{CRA 6.6/10}
-  \textit{Activities and societies:}
-  }{
-  % Activities and societies:
+  \section{Experience}
+  % \subsection{Vocational}
+  \cventry{Aug 21 - Current}{Data Scientist}{Hurb}{Rio de Janeiro}{}{
+  % Detailed achievements:
   \begin{itemize}
-    \item Young Talents for Science Program (pre-scientific initiation)
-    \item Robotics Team MinervaBost UFRJ (Project Leader and Captain)
-    \item Students Representative of Electrical Engineering
-    \item Graduation Committee
+    \item Developed a heuristic to predict hotel room prices by applying Kernel Density Estimation, which became the main resource to precify travel packages' hotel room nights.
+    \item Improved a Hotel Rooms Deduplication algorithm focusing on creating label functions based on business rules.
+    \item Developed a Demand Estimator using Google Vertex AI, Flyte as orchestrator, and MLFlow for monitoring. The project helped commercial executives to evaluate future demand and price to improve negotiations. It was an extensive data modeling challenge with plenty of business rules and constraints transformed into features.
+    \item Built a K-Means clusterization model to cluster hotel based on marketing performance metrics, helping Performance Marketing Team to improve bidding strategies.
   \end{itemize}
+  }
+  % \vspace{6}
+
+  \cventry{Mar 20 - Aug 21}{Hurb}{Data Analyst}{Rio de Janeiro, RJ}{}{
+  \begin{itemize}
+    \item Developed a pipeline for offline transaction tracking through Google's HTTP Request Measurement Protocol, using Airflow as orchestrator, allowing the Performance Team to use accurate sales data to enhance Google Ads campaigns.
+    \item Implemented Google Analytics' Google Enhanced E-commerce using Google Tag Manager, enriching user interactions data collection and allowing the development of projects such as Image Selection and Custom Search Results based on CTR.
+    \item Worked giving support to the Commercial and Marketing Performance teams creating tables, views, and dashboards to support a wide variety of strategic decisions.
+  \end{itemize}
+  }
+  % \vspace{6}
+
+  \cventry{Aug 19 - Mar 20}{Hurb}{Data Science Trainee}{Rio de Janeiro, RJ}{}{
+  \begin{itemize}
+    % \cvlistitem{Supported stakeholders from teams like Product, Commercial, and Marketing. Labored extensively with Google Analytics data through SQL and BigQuery.}
+    \item Supported business areas by using SQL to translate data into business insights through dashboardings and reports.
+    \item Developed a study case, using Google Trends data, about destinations with high demand for which we didn't use to sell travel packages; we could identify destinations that turned into top sellers in the following years.
+  \end{itemize}
+  }
+
+  \cventry{Sep 16 - Aug 18}{CEPEL}{Power Engineering Intern at ANAREDE}{Rio de Janeiro, RJ}{}{
+  \begin{itemize}
+    % \cvlistitem{Supported stakeholders from teams like Product, Commercial, and Marketing. Labored extensively with Google Analytics data through SQL and BigQuery.}
+    \item Supported the team in developing the power system software ANAREDE, which reunites tools for steady-state power systems analysis.
+    \item Worked on programming in Fortran and code versioning with TortoiseSVN in modules related to power flow, always focusing on clean code.
+    \item Developed an ANAREDE module used to produce reports related to contingency studies for the National System Operator (ONS).
+  \end{itemize}
+  }
+
+
+  \section{Education}
+  \cventry{Mar 13 - Dec 18}{Electrical Engineering}{Federal University of Rio de Janeiro}{Rio de Janeiro - RJ}{
+    % \textit{CRA 6.6/10}
+    \textit{Activities and societies:}
+    }{
+    % Activities and societies:
+    \begin{itemize}
+      \item Young Talents for Science Program (pre-scientific initiation)
+      \item Robotics Team MinervaBost UFRJ (Project Leader and Captain)
+      \item Students Representative of Electrical Engineering
+      \item Graduation Committee
+    \end{itemize}
+  }
+  % \cventry{Mar 10 - Jun 11}{Electrical Engineering}{University of Vassouras}{Vassouras - RJ}{\textit{No Degree Awarded}}{}
+
+  \nocite{*}
+  \bibliographystyle{plain}
+  \bibliography{publications}
+
+  \clearpage
+  %-----       letter       ---------------------------------------------------------
+  % recipient data
+  % \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+  % \date{January 01, 1984}
+  % \subject{Job application}
+  % \opening{Dear Sir or Madam,}
+  % \closing{Yours faithfully,}
+  % \signature{0.9}{signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
+  % \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+  % \makelettertitle
+
+  % Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+
+  % Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+
+  % Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+
+  % Albert Einstein discovered that $e=mc^2$ in 1905.
+
+  % \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+
+  % \makeletterclosing
+
 }
-% \cventry{Mar 10 - Jun 11}{Electrical Engineering}{University of Vassouras}{Vassouras - RJ}{\textit{No Degree Awarded}}{}
 
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+\pt{
+  \section{Skills}
+  \cvlanguage{Programming languages}{ Python, scikit-learn, SQL, Git, TortoiseSVN, Fortran, Matlab, \LaTeX }{}
+  \cvlanguage{Softwares and tools}{ GCP, BigQuery, VertexAI, Airflow, Flyte, Metabase, MLFlow, Machine Learning }{}
+  \cvlanguage{}{Supervised learning, Unsupervised learning }{}
+  \cvlanguage{Interpersonal}{ Pensamento crítico, Resolução de problemas, Habilidades analíticas, Visão sistêmica, Liderança  }{}
+  \cvlanguage{Languages}{ Inglês (Proeficiência Profissional CECRL C1)}{}
 
-% Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+  \section{Experience}
+  % \subsection{Vocational}
+  \cventry{Aug 21 - Current}{Cientista de Dados}{Hurb}{Rio de Janeiro}{}{
+  % Detailed achievements:
+  \begin{itemize}
+    \item Desenvolveu uma heurística para prever os preços dos quartos de hotel aplicando a estimativa de densidade de Kernel, que se tornou o principal recurso para especificar as diárias de quartos de hotel dos pacotes de viagem.
+    \item Aprimorou um algoritmo de desduplicação de quartos de hotel com foco na criação de funções de rótulo com base em regras comerciais.
+    \item Desenvolveu um estimador de demanda usando o Google Vertex AI, o Flyte como orquestrador e o MLFlow para monitoramento. O projeto ajudou os executivos comerciais a avaliar a demanda e o preço futuros para melhorar as negociações. Foi um desafio extenso de modelagem de dados com muitas regras de negócios e restrições transformadas em recursos.
+    \item Criou um modelo de clusterização K-Means para agrupar hotéis com base em métricas de desempenho de marketing, ajudando a equipe de marketing performance a aprimorar as estratégias de bidding.
+  \end{itemize}
+  }
+  % \vspace{6}
 
-\clearpage
-%-----       letter       ---------------------------------------------------------
-% recipient data
-% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-% \date{January 01, 1984}
-% \subject{Job application}
-% \opening{Dear Sir or Madam,}
-% \closing{Yours faithfully,}
-% \signature{0.9}{signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
-% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-% \makelettertitle
+  \cventry{Mar 20 - Aug 21}{Hurb}{Analista de Dados}{Rio de Janeiro, RJ}{}{
+  \begin{itemize}
+    \item Desenvolveu um pipeline para rastreamento de transações off-line por meio do protocolo de medição de solicitação HTTP do Google, usando o Airflow como orquestrador, permitindo que a equipe marketing performance usasse dados de vendas precisos para aprimorar as campanhas do Google Ads.
+    \item Implementou o Google Enhanced E-commerce, do Google Analytics, usando o Google Tag Manager, enriquecendo a coleta de dados de interações do usuário e permitindo o desenvolvimento de projetos como seleção de imagens e resultados de pesquisa personalizados com base no CTR.
+    \item Trabalhou dando suporte às equipes Comercial e de Marketing, criando tabelas, visualizações e dashboards para apoiar uma ampla variedade de decisões estratégicas.
+  \end{itemize}
+  }
+  % \vspace{6}
 
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+  \cventry{Aug 19 - Mar 20}{Hurb}{Data Science Trainee}{Rio de Janeiro, RJ}{}{
+  \begin{itemize}
+    % \cvlistitem{Supported stakeholders from teams like Product, Commercial, and Marketing. Labored extensively with Google Analytics data through SQL and BigQuery.}
+    \item Apoiou as áreas de negócios usando SQL para traduzir dados em insights de negócios por meio de dashboards e relatórios.
+    \item Desenvolveu um estudo de caso, usando dados do Google Trends, sobre destinos com alta demanda para os quais não vendíamos pacotes de viagem; identificou-se destinos que se figuraram entre os mais vendidos nos anos seguintes.
+  \end{itemize}
+  }
 
-% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+  \cventry{Sep 16 - Aug 18}{CEPEL}{Estagiária de Sistemas de Potência - ANAREDE}{Rio de Janeiro, RJ}{}{
+  \begin{itemize}
+    % \cvlistitem{Supported stakeholders from teams like Product, Commercial, and Marketing. Labored extensively with Google Analytics data through SQL and BigQuery.}
+    \item Apoiou a equipe no desenvolvimento do software do ANAREDE, que reúne ferramentas para análise de sistemas de energia em estado estacionário.
+    \item Trabalhou programando em Fortran, e com TortoiseSVNpara versionamento de código, em módulos relacionados ao fluxo de energia, com foco em código limpo.
+    \item Desenvolveu um módulo do ANAREDE utilizado para produzir relatórios relacionados a estudos de contingência para o Operador Nacional do Sistema (ONS).
+  \end{itemize}
+  }
 
-% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
 
-% Albert Einstein discovered that $e=mc^2$ in 1905.
+  \section{Education}
+  \cventry{Mar 13 - Dec 18}{Electrical Engineering}{Federal University of Rio de Janeiro}{Rio de Janeiro - RJ}{
+    % \textit{CRA 6.6/10}
+    \textit{Activities and societies:}
+    }{
+    % Activities and societies:
+    \begin{itemize}
+      \item Programa Jovens Talentos para a Ciência (pré-iniciação científica)
+      \item Equipe de Robótica MinervaBost UFRJ (Líder de Equipe e Capitã Geral)
+      \item Representante dos Estudantes do Departamento de Engenharia Elétrica
+      \item Comitê de Formatura 2017-2018
+    \end{itemize}
+  }
 
-% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+  \nocite{*}
+  \bibliographystyle{plain}
+  \bibliography{publications}
 
-% \makeletterclosing
+  \clearpage
+}
 
 %\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
