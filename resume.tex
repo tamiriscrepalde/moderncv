@@ -43,15 +43,15 @@
 \newcommand{\en}[1]{\ifen#1\fi}
 \newcommand{\pt}[1]{\ifpt#1\fi}
 
-\pttrue % Uncomment for portuguese document
-% \entrue % Uncomment for english document
+% \pttrue % Uncomment for portuguese document
+\entrue % Uncomment for english document
 
 % document language
 % \usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
 
 % personal data
 \name{Tamiris}{Martins}
-\address{Edgard Nogueira, 469, São Luiz}{27286-330 Volta Redonda - RJ}{Brazil}
+\address{Rua Bela Vista, Penedo}{Itatiaia - RJ}{Brazil}
 \phone[mobile]{+55~(21)~99632~9170}
 \email{tamiriscrepaldemartins@gmail.com}
 
@@ -85,7 +85,7 @@
   % Detailed achievements:
   \begin{itemize}
     \item Developed a heuristic to predict hotel room prices by applying Kernel Density Estimation, which became the main resource to precify travel packages' hotel room nights.
-    \item Improved a Hotel Rooms Deduplication algorithm focusing on creating label functions based on business rules.
+    \item Developed a Hotel Rooms Deduplication algorithm using VertexAI Entity Extraction and Snorkel by creating technical and business label functions.
     \item Developed a Demand Estimator using Google Vertex AI, Flyte as orchestrator, and MLFlow for monitoring. The project helped commercial executives to evaluate future demand and price to improve negotiations. It was an extensive data modeling challenge with plenty of business rules and constraints transformed into features.
     \item Built a K-Means clusterization model to cluster hotel based on marketing performance metrics, helping Performance Marketing Team to improve bidding strategies.
   \end{itemize}
@@ -94,9 +94,9 @@
 
   \cventry{Mar 20 - Aug 21}{Hurb}{Data Analyst}{Rio de Janeiro, RJ}{}{
   \begin{itemize}
-    \item Developed a pipeline for offline transaction tracking through Google's HTTP Request Measurement Protocol, using Airflow as orchestrator, allowing the Performance Team to use accurate sales data to enhance Google Ads campaigns.
+    \item Developed a pipeline for offline transaction tracking through Google's HTTP Request Measurement Protocol, using Airflow as orchestrator and Google PubSub logs as external trigger for the DAG, allowing the Performance Team to use accurate sales data to enhance Google Ads campaigns.
     \item Implemented Google Analytics' Google Enhanced E-commerce using Google Tag Manager, enriching user interactions data collection and allowing the development of projects such as Image Selection and Custom Search Results based on CTR.
-    \item Worked giving support to the Commercial and Marketing Performance teams creating tables, views, and dashboards to support a wide variety of strategic decisions.
+    \item Worked giving support to the Commercial and Marketing Performance teams creating tables and views on Google Bigquery, and dashboards with Metabase to support a wide variety of strategic decisions.
   \end{itemize}
   }
   % \vspace{6}
